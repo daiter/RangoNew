@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+ 3 <head>
+ 4     <title>Rango</title>
+ 5 </head>
+ 6 <body>
+ 7     <div>
+ 8     {% if category %}
+ 9         <h1>{{ category.name }}</h1>
+10         {% if pages %}
+11             <ul>
+12             {% for page in pages %}
+13                 <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+14             {% endfor %}
+15             </ul>
+16         {% else %}
+17             <strong>No pages currently in category.</strong>
+18         {% endif %}
+19     {% else %}
+20         The specified category does not exist!
+21     {% endif %}
+22     </div>
+23 </body>
+</html>
